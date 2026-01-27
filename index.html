@@ -1,149 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>DJ Lovett Entertainment | Atlanta DJ</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DJ Lovett Entertainment | Atlanta</title>
+  <meta name="description" content="DJ Lovett Entertainment — Atlanta event DJ for weddings, private events, and corporate events. Call/Text 404-403-5484." />
 
-<style>
-:root{
-  --accent-red:#ff4d4d;
-  --accent-blue:#3b82f6;
-  --dark:#05060a;
-}
+  <!-- Premium font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-*{
-  box-sizing:border-box;
-}
+  <style>
+    :root{
+      --bg:#05060a;
+      --txt:#ffffff;
+      --muted:rgba(255,255,255,.75);
+      --line:rgba(255,255,255,.12);
+      --accent:#ff3b3b;
+      --accent2:#2563eb;
+      --max:1160px;
+    }
 
-body{
-  margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial;
-  background:var(--dark);
-  color:#fff;
-}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Manrope, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color:var(--txt);
+      background:var(--bg);
+    }
+    a{color:inherit;text-decoration:none}
 
-/* =========================
-   HERO SECTION (FULL SCREEN)
-========================= */
-.hero{
-  height:100vh;
-  width:100%;
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(0,0,0,.65),
-      rgba(0,0,0,.45),
-      rgba(0,0,0,.85)
-    ),
-    url("hero.PNG") center / cover no-repeat;
+    /* HERO: full-bleed image */
+    .hero{
+      min-height:100vh;
+      background:
+        linear-gradient(120deg, rgba(0,0,0,.80) 0%, rgba(0,0,0,.50) 45%, rgba(0,0,0,.75) 100%),
+        radial-gradient(900px 600px at 20% 15%, rgba(37,99,235,.18), transparent 60%),
+        radial-gradient(900px 600px at 80% 20%, rgba(255,59,59,.14), transparent 55%),
+        url("hero.PNG") center / cover no-repeat;
+      position:relative;
+      overflow:hidden;
+    }
 
-  display:flex;
-  align-items:flex-end;
-  padding:40px 20px;
-}
+    /* subtle film grain / luxury texture */
+    .hero:before{
+      content:"";
+      position:absolute; inset:0;
+      background-image:
+        radial-gradient(rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 3px 3px;
+      opacity:.18;
+      pointer-events:none;
+      mix-blend-mode: overlay;
+    }
 
-/* =========================
-   HERO CONTENT CARD
-========================= */
-.hero-card{
-  max-width:520px;
-  background:rgba(15,15,25,.6);
-  backdrop-filter: blur(14px);
-  border-radius:26px;
-  padding:26px;
-  box-shadow:0 20px 60px rgba(0,0,0,.6);
-}
+    .wrap{
+      width:min(var(--max), 92vw);
+      margin:0 auto;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      padding:22px 0 40px;
+      position:relative;
+    }
 
-.location{
-  display:inline-block;
-  padding:6px 14px;
-  border-radius:999px;
-  background:rgba(255,255,255,.08);
-  font-size:13px;
-  margin-bottom:14px;
-}
+    /* Top bar overlays hero */
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+    }
 
-h1{
-  font-size:34px;
-  line-height:1.1;
-  margin:0 0 12px;
-}
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:800;
+      letter-spacing:.2px;
+    }
+    .mark{
+      width:34px;height:34px;border-radius:12px;
+      background: linear-gradient(135deg, var(--accent2), #7c3aed);
+      border:1px solid rgba(255,255,255,.18);
+    }
 
-p{
-  font-size:16px;
-  line-height:1.6;
-  opacity:.9;
-}
+    .topcta{
+      display:flex; gap:10px; align-items:center;
+    }
 
-/* =========================
-   BUTTONS
-========================= */
-.actions{
-  display:flex;
-  gap:12px;
-  margin-top:18px;
-  flex-wrap:wrap;
-}
+    .pill{
+      display:none;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.28);
+      backdrop-filter: blur(10px);
+      color:rgba(255,255,255,.85);
+      font-weight:700;
+      font-size:13px;
+    }
 
-.btn{
-  padding:14px 18px;
-  border-radius:14px;
-  font-weight:600;
-  text-decoration:none;
-  color:white;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-width:140px;
-}
+    .btn{
+      padding:10px 14px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.28);
+      backdrop-filter: blur(10px);
+      font-weight:800;
+      letter-spacing:.1px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+    }
+    .btn.primary{
+      border:none;
+      background: linear-gradient(135deg, var(--accent), #ff7a7a);
+    }
 
-.btn-red{
-  background:linear-gradient(135deg,#ff5a5a,#ff2f2f);
-}
+    /* Main hero content */
+    .content{
+      max-width:640px;
+      padding-top:34px;
+    }
 
-.btn-blue{
-  background:linear-gradient(135deg,#4f8cff,#2563eb);
-}
+    .tag{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.22);
+      backdrop-filter: blur(10px);
+      color:rgba(255,255,255,.88);
+      font-weight:700;
+      font-size:13px;
+    }
 
-.btn-outline{
-  background:rgba(255,255,255,.08);
-  border:1px solid rgba(255,255,255,.15);
-}
+    h1{
+      margin:18px 0 14px;
+      font-size: clamp(44px, 6.2vw, 76px);
+      line-height: .95;
+      letter-spacing: -1.2px;
+    }
 
-/* =========================
-   DESKTOP TWEAKS
-========================= */
-@media(min-width:768px){
-  h1{font-size:46px;}
-  .hero{padding:60px;}
-}
-</style>
+    .sub{
+      margin:0;
+      color:var(--muted);
+      font-size: 17px;
+      line-height: 1.7;
+      max-width: 56ch;
+    }
+
+    .actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:22px;
+    }
+
+    .btn.big{
+      padding:14px 18px;
+      border-radius:14px;
+      font-size:15px;
+    }
+    .btn.blue{
+      border:none;
+      background: linear-gradient(135deg, var(--accent2), #60a5fa);
+    }
+
+    /* Bottom strip (expensive detail) */
+    .bottom{
+      display:flex;
+      justify-content:space-between;
+      gap:14px;
+      align-items:flex-end;
+      flex-wrap:wrap;
+      margin-top:28px;
+    }
+
+    .fineprint{
+      color:rgba(255,255,255,.70);
+      font-size:13px;
+      line-height:1.5;
+    }
+
+    .facts{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .fact{
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.22);
+      backdrop-filter: blur(10px);
+      font-weight:700;
+      font-size:13px;
+      color:rgba(255,255,255,.85);
+    }
+
+    /* Mobile tweaks */
+    @media (min-width:720px){
+      .pill{display:inline-flex;}
+    }
+  </style>
 </head>
 
 <body>
+  <section class="hero">
+    <div class="wrap">
+      <!-- Top bar -->
+      <div class="topbar">
+        <div class="brand">
+          <span class="mark"></span>
+          <span>DJ Lovett Entertainment</span>
+        </div>
 
-<section class="hero">
-  <div class="hero-card">
-    <div class="location">
-      📍 Atlanta, GA • Weddings • Private Events • Corporate
+        <div class="topcta">
+          <span class="pill">Atlanta, GA • Weddings • Private • Corporate</span>
+          <a class="btn primary" href="tel:4044035484">Call Now</a>
+        </div>
+      </div>
+
+      <!-- Hero content -->
+      <div class="content">
+        <span class="tag">Available for bookings • Fast response</span>
+
+        <h1>Make your event<br>feel expensive.</h1>
+
+        <p class="sub">
+          Premium sound, clean setup, and the right music for your crowd.
+          Weddings, private parties, and corporate events across Atlanta.
+        </p>
+
+        <div class="actions">
+          <a class="btn big primary" href="tel:4044035484">Book by Phone</a>
+          <a class="btn big blue" href="sms:4044035484">Text to Book</a>
+          <a class="btn big" href="mailto:freddielovett36@gmail.com?subject=Booking%20Request%20-%20DJ%20Lovett%20Entertainment">Email</a>
+        </div>
+      </div>
+
+      <!-- Bottom details -->
+      <div class="bottom">
+        <div class="fineprint">
+          Starting at <b>$100/hr</b> • Atlanta & surrounding areas<br/>
+          Call or text <b>404-403-5484</b> for a quick quote.
+        </div>
+
+        <div class="facts">
+          <div class="fact">Pro Sound + Mic</div>
+          <div class="fact">Lighting Options</div>
+          <div class="fact">On-Time Setup</div>
+        </div>
+      </div>
     </div>
-
-    <h1>DJ Lovett<br/>Entertainment</h1>
-
-    <p>
-      High-energy professional DJ services with a clean setup,
-      premium sound, and music that fits your crowd.
-      Fast response — secure your date today.
-    </p>
-
-    <div class="actions">
-      <a href="tel:4044035484" class="btn btn-red">Book by Phone</a>
-      <a href="sms:4044035484" class="btn btn-blue">Text to Book</a>
-      <a href="mailto:freddielovett36@gmail.com" class="btn btn-outline">Email</a>
-    </div>
-  </div>
-</section>
-
+  </section>
 </body>
 </html>
