@@ -6,7 +6,6 @@
   <title>DJ Lovett Entertainment | Atlanta</title>
   <meta name="description" content="DJ Lovett Entertainment — Atlanta event DJ for weddings, private events, and corporate events. Call/Text 404-403-5484." />
 
-  <!-- Premium font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -17,138 +16,131 @@
       --txt:#ffffff;
       --muted:rgba(255,255,255,.75);
       --line:rgba(255,255,255,.12);
+      --card:rgba(12,12,18,.62);
+      --shadow: 0 18px 70px rgba(0,0,0,.55);
       --accent:#ff3b3b;
       --accent2:#2563eb;
+      --accent3:#a855f7;
       --max:1160px;
+      --radius:18px;
     }
-
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
       font-family: Manrope, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       color:var(--txt);
-      background:var(--bg);
+      background:
+        radial-gradient(900px 600px at 15% 0%, rgba(37,99,235,.14), transparent 60%),
+        radial-gradient(900px 600px at 85% 10%, rgba(168,85,247,.10), transparent 55%),
+        var(--bg);
     }
     a{color:inherit;text-decoration:none}
+    .container{width:min(var(--max),92vw);margin:0 auto}
+    .anchor{scroll-margin-top:92px}
 
-    /* HERO: full-bleed image */
-    .hero{
-      min-height:100vh;
-      background:
-        linear-gradient(120deg, rgba(0,0,0,.80) 0%, rgba(0,0,0,.50) 45%, rgba(0,0,0,.75) 100%),
-        radial-gradient(900px 600px at 20% 15%, rgba(37,99,235,.18), transparent 60%),
-        radial-gradient(900px 600px at 80% 20%, rgba(255,59,59,.14), transparent 55%),
-        url("hero.PNG") center / cover no-repeat;
-      position:relative;
-      overflow:hidden;
-    }
-
-    /* subtle film grain / luxury texture */
-    .hero:before{
-      content:"";
-      position:absolute; inset:0;
-      background-image:
-        radial-gradient(rgba(255,255,255,.035) 1px, transparent 1px);
-      background-size: 3px 3px;
-      opacity:.18;
-      pointer-events:none;
-      mix-blend-mode: overlay;
-    }
-
-    .wrap{
-      width:min(var(--max), 92vw);
-      margin:0 auto;
-      min-height:100vh;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      padding:22px 0 40px;
-      position:relative;
-    }
-
-    /* Top bar overlays hero */
+    /* Top nav (clickable) */
     .topbar{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:14px;
+      position:fixed; top:0; left:0; right:0; z-index:50;
+      background: linear-gradient(to bottom, rgba(0,0,0,.65), rgba(0,0,0,.15));
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,.06);
     }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      font-weight:800;
-      letter-spacing:.2px;
+    .nav{
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      padding:12px 0;
     }
+    .brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.2px;white-space:nowrap}
     .mark{
       width:34px;height:34px;border-radius:12px;
-      background: linear-gradient(135deg, var(--accent2), #7c3aed);
+      background: linear-gradient(135deg, var(--accent2), var(--accent3));
       border:1px solid rgba(255,255,255,.18);
+      box-shadow: 0 14px 40px rgba(0,0,0,.45);
     }
 
-    .topcta{
-      display:flex; gap:10px; align-items:center;
+    .menu{
+      display:flex; gap:10px; flex-wrap:wrap;
+      font-weight:800;
+      color:rgba(255,255,255,.9);
     }
-
-    .pill{
-      display:none;
-      padding:10px 12px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background: rgba(0,0,0,.28);
-      backdrop-filter: blur(10px);
-      color:rgba(255,255,255,.85);
-      font-weight:700;
-      font-size:13px;
+    .menu a{
+      padding:8px 10px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.20);
+    }
+    .menu a:hover{background:rgba(0,0,0,.35)}
+    @media (max-width: 760px){
+      .menu{display:none;} /* keeps it clean on phone */
     }
 
     .btn{
       padding:10px 14px;
       border-radius:12px;
-      border:1px solid var(--line);
-      background: rgba(0,0,0,.28);
-      backdrop-filter: blur(10px);
-      font-weight:800;
-      letter-spacing:.1px;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.22);
+      font-weight:900;
+      display:inline-flex; align-items:center; justify-content:center;
       gap:8px;
     }
     .btn.primary{
       border:none;
       background: linear-gradient(135deg, var(--accent), #ff7a7a);
+      box-shadow: 0 18px 60px rgba(255,59,59,.22);
+    }
+    .btn.blue{
+      border:none;
+      background: linear-gradient(135deg, var(--accent2), #60a5fa);
+      box-shadow: 0 18px 60px rgba(37,99,235,.18);
     }
 
-    /* Main hero content */
-    .content{
-      max-width:640px;
-      padding-top:34px;
+    /* HERO */
+    .hero{
+      min-height:100vh;
+      padding:96px 0 46px; /* space for fixed nav */
+      background:
+        linear-gradient(120deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.45) 45%, rgba(0,0,0,.80) 100%),
+        radial-gradient(900px 600px at 20% 15%, rgba(37,99,235,.16), transparent 60%),
+        radial-gradient(900px 600px at 80% 20%, rgba(255,59,59,.10), transparent 55%),
+        url("hero.PNG") center / cover no-repeat;
+      position:relative;
+      overflow:hidden;
     }
-
+    .hero:before{
+      content:"";
+      position:absolute; inset:0;
+      background-image: radial-gradient(rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 3px 3px;
+      opacity:.18;
+      pointer-events:none;
+      mix-blend-mode: overlay;
+    }
+    .heroGrid{
+      position:relative;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:16px;
+      align-items:end;
+    }
+    @media (max-width: 900px){.heroGrid{grid-template-columns:1fr}}
     .tag{
       display:inline-flex;
-      gap:10px;
-      align-items:center;
+      gap:10px; align-items:center;
       padding:10px 14px;
       border-radius:999px;
       border:1px solid rgba(255,255,255,.14);
       background: rgba(0,0,0,.22);
       backdrop-filter: blur(10px);
       color:rgba(255,255,255,.88);
-      font-weight:700;
+      font-weight:800;
       font-size:13px;
     }
-
     h1{
       margin:18px 0 14px;
       font-size: clamp(44px, 6.2vw, 76px);
       line-height: .95;
       letter-spacing: -1.2px;
     }
-
     .sub{
       margin:0;
       color:var(--muted);
@@ -156,111 +148,240 @@
       line-height: 1.7;
       max-width: 56ch;
     }
-
-    .actions{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      margin-top:22px;
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+    .glass{
+      background: var(--card);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+      padding: 18px;
     }
-
-    .btn.big{
-      padding:14px 18px;
-      border-radius:14px;
-      font-size:15px;
-    }
-    .btn.blue{
-      border:none;
-      background: linear-gradient(135deg, var(--accent2), #60a5fa);
-    }
-
-    /* Bottom strip (expensive detail) */
-    .bottom{
-      display:flex;
-      justify-content:space-between;
-      gap:14px;
-      align-items:flex-end;
-      flex-wrap:wrap;
-      margin-top:28px;
-    }
-
-    .fineprint{
-      color:rgba(255,255,255,.70);
-      font-size:13px;
-      line-height:1.5;
-    }
-
-    .facts{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-    }
+    .facts{display:flex; gap:10px; flex-wrap:wrap}
     .fact{
       padding:10px 12px;
       border-radius:14px;
       border:1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.22);
-      backdrop-filter: blur(10px);
-      font-weight:700;
+      background: rgba(0,0,0,.18);
+      font-weight:800;
       font-size:13px;
       color:rgba(255,255,255,.85);
     }
 
-    /* Mobile tweaks */
-    @media (min-width:720px){
-      .pill{display:inline-flex;}
+    /* Sections */
+    section.bodysec{padding:56px 0}
+    h2{margin:0 0 12px;font-size:28px;letter-spacing:-.3px}
+    .lead{margin:0 0 18px;color:var(--muted);line-height:1.7;max-width:75ch}
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    @media (max-width:900px){.grid3{grid-template-columns:1fr}}
+    .card{
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      border-radius: 20px;
+      padding:16px;
+      box-shadow: 0 12px 40px rgba(0,0,0,.28);
     }
+    .card h3{margin:0 0 8px}
+    .card p{margin:0;color:var(--muted);line-height:1.55}
+    .price{
+      margin-top:12px;
+      display:inline-flex;align-items:baseline;gap:8px;
+      padding:10px 12px;border-radius:16px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.18);
+    }
+    .price b{font-size:22px}
+    .price span{color:var(--muted);font-size:13px}
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+    @media (max-width:900px){.gallery{grid-template-columns:repeat(2,1fr)}}
+    .g{border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.04);min-height:120px}
+    .g img{width:100%;height:100%;object-fit:cover;display:block}
+
+    /* Reviews */
+    .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    @media (max-width:900px){.reviews{grid-template-columns:1fr}}
+    .quote{color:#f1f1ff;line-height:1.6}
+    .who{margin-top:10px;color:var(--muted);font-weight:900;font-size:13px}
+
+    /* Contact */
+    .contactGrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    @media (max-width:900px){.contactGrid{grid-template-columns:1fr}}
+    .field{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.20);
+      color:#fff;
+      outline:none;
+    }
+    textarea.field{min-height:120px;resize:vertical}
+
+    footer{border-top:1px solid rgba(255,255,255,.10);padding:26px 0 36px;color:var(--muted)}
+    .small{font-size:12px}
   </style>
 </head>
 
 <body>
-  <section class="hero">
-    <div class="wrap">
-      <!-- Top bar -->
-      <div class="topbar">
-        <div class="brand">
-          <span class="mark"></span>
-          <span>DJ Lovett Entertainment</span>
-        </div>
 
-        <div class="topcta">
-          <span class="pill">Atlanta, GA • Weddings • Private • Corporate</span>
-          <a class="btn primary" href="tel:4044035484">Call Now</a>
-        </div>
+<!-- FIXED NAV -->
+<div class="topbar">
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="#top"><span class="mark"></span><span>DJ Lovett Entertainment</span></a>
+      <div class="menu">
+        <a href="#services">Services</a>
+        <a href="#packages">Packages</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Booking</a>
+        <!-- OPTIONAL: separate pages later -->
+        <!-- <a href="services.html">Services Page</a> -->
       </div>
+      <a class="btn primary" href="tel:4044035484">Call Now</a>
+    </div>
+  </div>
+</div>
 
-      <!-- Hero content -->
-      <div class="content">
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="container">
+    <div class="heroGrid">
+      <div>
         <span class="tag">Available for bookings • Fast response</span>
-
         <h1>Make your event<br>feel expensive.</h1>
-
         <p class="sub">
           Premium sound, clean setup, and the right music for your crowd.
           Weddings, private parties, and corporate events across Atlanta.
         </p>
 
         <div class="actions">
-          <a class="btn big primary" href="tel:4044035484">Book by Phone</a>
-          <a class="btn big blue" href="sms:4044035484">Text to Book</a>
-          <a class="btn big" href="mailto:freddielovett36@gmail.com?subject=Booking%20Request%20-%20DJ%20Lovett%20Entertainment">Email</a>
+          <a class="btn primary" href="tel:4044035484">Book by Phone</a>
+          <a class="btn blue" href="sms:4044035484">Text to Book</a>
+          <a class="btn" href="mailto:freddielovett36@gmail.com?subject=Booking%20Request%20-%20DJ%20Lovett%20Entertainment">Email</a>
         </div>
       </div>
 
-      <!-- Bottom details -->
-      <div class="bottom">
-        <div class="fineprint">
-          Starting at <b>$100/hr</b> • Atlanta & surrounding areas<br/>
-          Call or text <b>404-403-5484</b> for a quick quote.
+      <div class="glass">
+        <div style="font-weight:900; font-size:14px;">Quick Quote</div>
+        <div style="margin-top:10px;color:var(--muted);line-height:1.6;font-size:13px;">
+          Starting at <b>$100/hr</b>. Tell me your date, venue, and hours.
         </div>
-
-        <div class="facts">
+        <div style="margin-top:14px;" class="facts">
           <div class="fact">Pro Sound + Mic</div>
           <div class="fact">Lighting Options</div>
           <div class="fact">On-Time Setup</div>
         </div>
+        <div style="margin-top:14px;">
+          <a class="btn primary" href="#contact" style="width:100%;">Get a Quote</a>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="bodysec container anchor">
+  <h2>Services</h2>
+  <p class="lead">Pick your event type — I handle the music, announcements, and energy.</p>
+  <div class="grid3">
+    <div class="card"><h3>Weddings</h3><p>Ceremony + reception coverage, mic for speeches, clean transitions, packed dance floor.</p></div>
+    <div class="card"><h3>Private Parties</h3><p>Birthdays, graduations, reunions — requests welcome, crowd control included.</p></div>
+    <div class="card"><h3>Corporate Events</h3><p>Professional vibe, clean setup, volume control for mixers and celebrations.</p></div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section id="packages" class="bodysec container anchor">
+  <h2>Packages</h2>
+  <p class="lead">Simple pricing. Ask about travel, extra lighting, and extended time.</p>
+  <div class="grid3">
+    <div class="card"><h3>Basic</h3><p>DJ + sound + mic. Great for smaller events.</p><div class="price"><b>$100/hr</b><span>2-hour minimum (edit)</span></div></div>
+    <div class="card"><h3>Standard</h3><p>DJ + sound + mic + party lighting.</p><div class="price"><b>$100/hr</b><span>Most popular</span></div></div>
+    <div class="card"><h3>Premium</h3><p>DJ + enhanced lighting + MC support + planning call.</p><div class="price"><b>$100/hr</b><span>Best for weddings</span></div></div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="bodysec container anchor">
+  <h2>Gallery</h2>
+  <p class="lead">Upload more photos later (g1.jpg, g2.jpg…). For now these are placeholders.</p>
+  <div class="gallery">
+    <div class="g"><img src="hero.PNG" alt="DJ Lovett event" /></div>
+    <div class="g"><img src="hero.PNG" alt="DJ Lovett event" /></div>
+    <div class="g"><img src="hero.PNG" alt="DJ Lovett event" /></div>
+    <div class="g"><img src="hero.PNG" alt="DJ Lovett event" /></div>
+    <div class="g"><img src="hero.PNG" alt="DJ Lovett event" /></div>
+    <div class="g"><img src="hero.PNG" alt="DJ Lovett event" /></div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="bodysec container anchor">
+  <h2>Reviews</h2>
+  <p class="lead">Swap these with real reviews once you have them.</p>
+  <div class="reviews">
+    <div class="card"><div class="quote">“DJ Lovett kept the party moving all night. Professional setup and perfect music.”</div><div class="who">— Wedding Client</div></div>
+    <div class="card"><div class="quote">“Showed up early, sounded amazing, and the crowd loved the mix. Highly recommended.”</div><div class="who">— Birthday Client</div></div>
+    <div class="card"><div class="quote">“Easy to work with and very responsive. Perfect vibe for our corporate event.”</div><div class="who">— Corporate Client</div></div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section id="contact" class="bodysec container anchor">
+  <h2>Booking</h2>
+  <p class="lead">Fast response. Send your date, venue, and vibe.</p>
+
+  <div class="contactGrid">
+    <div class="card">
+      <h3 style="margin-top:0;">Quick Contact</h3>
+      <p class="lead" style="margin-bottom:14px;">
+        📞 <a href="tel:4044035484"><b>404-403-5484</b></a><br/>
+        ✉️ <a href="mailto:freddielovett36@gmail.com"><b>freddielovett36@gmail.com</b></a><br/>
+        📍 Atlanta, GA
+      </p>
+      <div class="actions">
+        <a class="btn primary" href="tel:4044035484">Call</a>
+        <a class="btn blue" href="sms:4044035484">Text</a>
+        <a class="btn" href="mailto:freddielovett36@gmail.com?subject=Booking%20Request%20-%20DJ%20Lovett%20Entertainment">Email</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0;">Send a Booking Request</h3>
+      <form action="mailto:freddielovett36@gmail.com" method="post" enctype="text/plain">
+        <input class="field" name="Name" placeholder="Your name" required />
+        <div style="height:10px"></div>
+        <input class="field" name="Phone" placeholder="Your phone number" />
+        <div style="height:10px"></div>
+        <input class="field" name="Event Date" placeholder="Event date (MM/DD/YYYY)" required />
+        <div style="height:10px"></div>
+        <input class="field" name="Venue/City" placeholder="Venue / City" />
+        <div style="height:10px"></div>
+        <input class="field" name="Hours Needed" placeholder="How many hours?" />
+        <div style="height:10px"></div>
+        <textarea class="field" name="Details" placeholder="Event type + music vibe + must-play songs"></textarea>
+        <div style="height:12px"></div>
+        <button class="btn primary" type="submit" style="width:100%;">Send Request</button>
+      </form>
+      <p class="small" style="margin-top:10px;color:var(--muted);">
+        Want a real form that saves leads automatically? Say “Formspree” and I’ll connect it.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="small">© <span id="y"></span> DJ Lovett Entertainment • Built & deployed from a phone.</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
