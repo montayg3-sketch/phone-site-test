@@ -2,46 +2,215 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DJ Template | One Page</title>
-  <meta name="description" content="Professional DJ for weddings, private events, and school events. Book your date today." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DJ YOURNAME | Bookings</title>
+  <meta name="description" content="Professional DJ for weddings, private events, and corporate parties. Book your date today." />
   <style>
     :root{
-      --bg:#0b0b10;
-      --card:#121220;
-      --text:#ffffff;
-      --muted:#b8b8d6;
-      --line:#23233a;
-      --accent:#0070f3;
-      --accent2:#7c3aed;
-      --radius:18px;
-      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --bg:#0b0b10; --card:#121220; --text:#fff; --muted:#b8b8d6;
+      --line:#23233a; --accent:#0070f3; --accent2:#7c3aed; --radius:18px;
       --max:1100px;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      background: radial-gradient(1200px 700px at 20% 0%, rgba(124,58,237,.25), transparent 60%),
-                  radial-gradient(1000px 600px at 100% 20%, rgba(0,112,243,.22), transparent 55%),
-                  var(--bg);
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
       color:var(--text);
+      background:
+        radial-gradient(1200px 700px at 20% 0%, rgba(124,58,237,.25), transparent 60%),
+        radial-gradient(1000px 600px at 100% 20%, rgba(0,112,243,.22), transparent 55%),
+        var(--bg);
     }
-    a{color:inherit; text-decoration:none}
-    .container{width:min(var(--max), 92vw); margin:0 auto}
-    .pill{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 12px; border:1px solid var(--line);
-      border-radius:999px; background:rgba(18,18,32,.7);
-      color:var(--muted); font-size:13px;
-      backdrop-filter: blur(8px);
+    a{color:inherit;text-decoration:none}
+    .container{width:min(var(--max),92vw);margin:0 auto}
+    header{
+      position:sticky;top:0;z-index:50;
+      background:rgba(11,11,16,.55);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(35,35,58,.7);
     }
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.3px}
+    .logo{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2))}
+    .links{display:flex;gap:10px;flex-wrap:wrap;color:var(--muted);font-weight:700}
+    .links a{padding:8px 10px;border-radius:10px}
+    .links a:hover{background:rgba(255,255,255,.06);color:#fff}
     .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      padding:12px 16px;
-      border-radius:12px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.06);
-      color:#fff;
-     
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:12px 16px;border-radius:12px;border:1px solid var(--line);
+      background:rgba(255,255,255,.06);font-weight:800
+    }
+    .btn.primary{border:none;background:linear-gradient(135deg,var(--accent),var(--accent2))}
+    .hero{padding:56px 0 18px}
+    .grid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+    @media (max-width:900px){.grid{grid-template-columns:1fr}}
+    .card{
+      border:1px solid rgba(35,35,58,.9);
+      background:rgba(18,18,32,.75);
+      border-radius:var(--radius);
+      padding:20px;
+    }
+    h1{margin:10px 0 10px;font-size:clamp(34px,5vw,54px);line-height:1.03;letter-spacing:-1px}
+    .sub{margin:0;color:var(--muted);line-height:1.6}
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    .pill{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 12px;border:1px solid var(--line);
+      border-radius:999px;background:rgba(18,18,32,.7);
+      color:var(--muted);font-size:13px;
+    }
+    .photo{
+      border:1px solid rgba(35,35,58,.9);
+      border-radius:var(--radius);
+      overflow:hidden;min-height:260px;
+      background:rgba(255,255,255,.04);
+    }
+    .photo img{width:100%;height:100%;object-fit:cover;display:block}
+    .section{padding:42px 0}
+    .section h2{margin:0 0 10px;font-size:26px}
+    .lead{margin:0 0 18px;color:var(--muted);line-height:1.65;max-width:70ch}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    @media (max-width:900px){.cards{grid-template-columns:1fr}}
+    .svc{padding:16px;border-radius:var(--radius);border:1px solid rgba(35,35,58,.9);background:rgba(18,18,32,.75)}
+    .svc h3{margin:0 0 6px}
+    .svc p{margin:0;color:var(--muted);line-height:1.55}
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    @media (max-width:900px){.contact{grid-template-columns:1fr}}
+    .field{width:100%;padding:12px 12px;border-radius:12px;border:1px solid rgba(35,35,58,.9);background:rgba(255,255,255,.04);color:#fff}
+    textarea.field{min-height:120px;resize:vertical}
+    footer{border-top:1px solid rgba(35,35,58,.7);padding:26px 0 36px;color:var(--muted)}
+    .small{font-size:12px;color:var(--muted)}
+    .anchor{scroll-margin-top:90px}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="#top"><span class="logo"></span><span>DJ YOURNAME</span></a>
+      <nav class="links" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn primary" href="#contact">Book Now</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero container anchor">
+    <div class="grid">
+      <div class="card">
+        <span class="pill">📍 Atlanta, GA • Weddings • Private Events • Corporate</span>
+        <h1>DJ YOURNAME</h1>
+        <p class="sub">
+          High-energy DJ + clean professional setup. I keep the party moving and the vibe right — from the first song to the last.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="#contact">Get a Quote</a>
+          <a class="btn" href="tel:4044035484">Call</a>
+          <a class="btn" href="mailto:your@email.com">Email</a>
+        </div>
+      </div>
+
+      <div class="photo" aria-label="DJ photo">
+        <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1600&q=80" alt="DJ performing" />
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="section container anchor">
+    <h2>Services</h2>
+    <p class="lead">Choose a vibe. I handle the music, announcements, and energy — you enjoy the event.</p>
+    <div class="cards">
+      <div class="svc">
+        <h3>Weddings</h3>
+        <p>Ceremony + reception coverage, mic for speeches, clean transitions, and a packed dance floor.</p>
+      </div>
+      <div class="svc">
+        <h3>Private Parties</h3>
+        <p>Birthdays, graduations, reunions — custom playlists and crowd control.</p>
+      </div>
+      <div class="svc">
+        <h3>Corporate Events</h3>
+        <p>Professional vibe, punctual setup, and volume control for any venue.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section container anchor">
+    <h2>About</h2>
+    <p class="lead">
+      Put your short bio here. Example: “With 10+ years of experience, I’ve DJ’d venues, weddings, and packed parties across Atlanta.”
+    </p>
+    <div class="cards">
+      <div class="svc">
+        <h3>What you get</h3>
+        <p>Sound system • Wireless mic • Lighting • MC • Clean setup • On-time arrival</p>
+      </div>
+      <div class="svc">
+        <h3>Music</h3>
+        <p>Hip-Hop • R&B • Afrobeats • Pop • Dancehall • Old School • Requests</p>
+      </div>
+      <div class="svc">
+        <h3>Pricing</h3>
+        <p>Starting at <b>$100/hr</b> (edit this). Travel fees may apply depending on location.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section container anchor">
+    <h2>Contact & Booking</h2>
+    <p class="lead">Fast response. Tell me your date, venue, and vibe.</p>
+
+    <div class="contact">
+      <div class="card">
+        <h3 style="margin:0 0 10px;">Quick Contact</h3>
+        <p class="sub" style="margin:0 0 14px;">
+          📞 <a href="tel:4044035484">404-403-5484</a><br/>
+          ✉️ <a href="mailto:your@email.com">your@email.com</a><br/>
+          📍 Atlanta, GA
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="sms:4044035484">Text Me</a>
+          <a class="btn" href="https://instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
+        </div>
+        <p class="small" style="margin-top:14px;">Tip: Replace links + info with your real details.</p>
+      </div>
+
+      <div class="card">
+        <h3 style="margin:0 0 10px;">Booking Message</h3>
+        <form action="mailto:your@email.com" method="post" enctype="text/plain">
+          <input class="field" name="Name" placeholder="Your name" required />
+          <div style="height:10px"></div>
+          <input class="field" name="Event Date" placeholder="Event date (MM/DD)" required />
+          <div style="height:10px"></div>
+          <input class="field" name="Venue/City" placeholder="Venue / City" />
+          <div style="height:10px"></div>
+          <textarea class="field" name="Details" placeholder="Tell me the vibe + hours needed"></textarea>
+          <div style="height:12px"></div>
+          <button class="btn primary" type="submit" style="width:100%;">Send</button>
+        </form>
+        <p class="small" style="margin-top:10px;">
+          (This opens the user’s email app. Later we can add a real form.)
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="small">© <span id="y"></span> DJ YOURNAME • Built & deployed from a phone.</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
