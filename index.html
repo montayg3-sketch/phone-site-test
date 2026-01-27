@@ -34,12 +34,11 @@
     .container{width:min(var(--max),92vw);margin:0 auto}
     .anchor{scroll-margin-top:92px}
 
-    header{
-      position:sticky;top:0;z-index:50;
-      background:rgba(11,11,16,.62);
-      backdrop-filter: blur(10px);
-      border-bottom:1px solid rgba(35,35,58,.8);
-    }
+ header{
+  position:relative;           /* not sticky */
+  background:transparent;      /* no dark bar */
+  border-bottom:none;
+}
     .nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 0}
     .brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.2px;white-space:nowrap}
     .logo{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--accent2),#7c3aed);box-shadow:var(--shadow)}
@@ -99,17 +98,20 @@
     .stat b{display:block}
     .stat span{display:block;color:var(--muted);font-size:13px;margin-top:4px}
 
-    .heroPhoto{
-      border:1px solid rgba(35,35,58,.9);
-      border-radius:var(--radius);
-      overflow:hidden;
-      min-height: 420px;
-      .heroPhoto{
-  height: calc(100vh - 78px); /* full screen minus the sticky header */
-  min-height: 560px;
-  border-radius: 0;          /* edge-to-edge */
+   .heroPhoto{
+  height: 92vh;                /* fills the top screen */
+  min-height: 520px;
+  border-radius: 0;
   border: none;
   box-shadow: none;
+
+  background:
+    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.25)),
+    url("hero.PNG") center / cover no-repeat;
+
+  position: relative;
+  overflow: hidden;
+}
 
   background:
     linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.25)),
