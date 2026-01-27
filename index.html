@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DJ Lovett Entertainment | Atlanta</title>
-  <meta name="description" content="DJ Lovett Entertainment — Atlanta event DJ for weddings, private events, and corporate events. Call/Text 404-403-5484." />
+  <title>DJ Lovett Entertainment | Atlanta Event DJ</title>
+  <meta name="description" content="DJ Lovett Entertainment — Atlanta DJ for weddings, private events, and corporate events. Call/Text 404-403-5484." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,94 +13,93 @@
   <style>
     :root{
       --bg:#05060a;
-      --txt:#ffffff;
-      --muted:rgba(255,255,255,.75);
-      --line:rgba(255,255,255,.12);
-      --card:rgba(12,12,18,.62);
+      --panel: rgba(10,10,16,.62);
+      --panel2: rgba(255,255,255,.04);
+      --text:#fff;
+      --muted: rgba(255,255,255,.72);
+      --line: rgba(255,255,255,.10);
       --shadow: 0 18px 70px rgba(0,0,0,.55);
-      --accent:#ff3b3b;
-      --accent2:#2563eb;
-      --accent3:#a855f7;
-      --max:1160px;
-      --radius:18px;
+      --r: 18px;
+
+      --red:#ff3b3b;
+      --blue:#2563eb;
+      --violet:#a855f7;
+
+      --max: 1120px;
     }
+
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family: Manrope, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      color:var(--txt);
+      font-family:Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial;
       background:
         radial-gradient(900px 600px at 15% 0%, rgba(37,99,235,.14), transparent 60%),
         radial-gradient(900px 600px at 85% 10%, rgba(168,85,247,.10), transparent 55%),
+        radial-gradient(900px 600px at 50% 120%, rgba(255,59,59,.08), transparent 55%),
         var(--bg);
+      color:var(--text);
     }
     a{color:inherit;text-decoration:none}
     .container{width:min(var(--max),92vw);margin:0 auto}
     .anchor{scroll-margin-top:92px}
 
-    /* Top nav (clickable) */
-    .topbar{
-      position:fixed; top:0; left:0; right:0; z-index:50;
-      background: linear-gradient(to bottom, rgba(0,0,0,.65), rgba(0,0,0,.15));
-      backdrop-filter: blur(10px);
+    /* NAV */
+    .navwrap{
+      position:fixed;top:0;left:0;right:0;z-index:50;
+      background: linear-gradient(to bottom, rgba(0,0,0,.72), rgba(0,0,0,.22));
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(255,255,255,.06);
     }
     .nav{
-      display:flex; align-items:center; justify-content:space-between; gap:12px;
       padding:12px 0;
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
     }
-    .brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.2px;white-space:nowrap}
+    .brand{
+      display:flex;align-items:center;gap:10px;
+      font-weight:900;letter-spacing:.2px;white-space:nowrap;
+    }
     .mark{
       width:34px;height:34px;border-radius:12px;
-      background: linear-gradient(135deg, var(--accent2), var(--accent3));
+      background: linear-gradient(135deg,var(--blue),var(--violet));
       border:1px solid rgba(255,255,255,.18);
       box-shadow: 0 14px 40px rgba(0,0,0,.45);
     }
 
-    .menu{
-      display:flex; gap:10px; flex-wrap:wrap;
-      font-weight:800;
-      color:rgba(255,255,255,.9);
-    }
-    .menu a{
-      padding:8px 10px;
-      border-radius:12px;
+    .links{display:flex;gap:10px;flex-wrap:wrap;font-weight:800;color:rgba(255,255,255,.9)}
+    .links a{
+      padding:8px 10px;border-radius:12px;
       border:1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.20);
+      background: rgba(0,0,0,.18);
     }
-    .menu a:hover{background:rgba(0,0,0,.35)}
-    @media (max-width: 760px){
-      .menu{display:none;} /* keeps it clean on phone */
-    }
+    .links a:hover{background:rgba(0,0,0,.32)}
+    @media (max-width: 820px){ .links{display:none} }
 
     .btn{
-      padding:10px 14px;
-      border-radius:12px;
+      padding:10px 14px;border-radius:12px;
       border:1px solid rgba(255,255,255,.12);
       background: rgba(0,0,0,.22);
       font-weight:900;
-      display:inline-flex; align-items:center; justify-content:center;
-      gap:8px;
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
     }
     .btn.primary{
       border:none;
-      background: linear-gradient(135deg, var(--accent), #ff7a7a);
+      background: linear-gradient(135deg,var(--red),#ff7a7a);
       box-shadow: 0 18px 60px rgba(255,59,59,.22);
     }
     .btn.blue{
       border:none;
-      background: linear-gradient(135deg, var(--accent2), #60a5fa);
+      background: linear-gradient(135deg,var(--blue),#60a5fa);
       box-shadow: 0 18px 60px rgba(37,99,235,.18);
     }
 
     /* HERO */
     .hero{
-      min-height:100vh;
-      padding:96px 0 46px; /* space for fixed nav */
+      min-height: 100vh;
+      padding: 96px 0 48px;
       background:
-        linear-gradient(120deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.45) 45%, rgba(0,0,0,.80) 100%),
-        radial-gradient(900px 600px at 20% 15%, rgba(37,99,235,.16), transparent 60%),
+        linear-gradient(120deg, rgba(0,0,0,.84) 0%, rgba(0,0,0,.45) 45%, rgba(0,0,0,.82) 100%),
+        radial-gradient(900px 600px at 20% 15%, rgba(37,99,235,.14), transparent 60%),
         radial-gradient(900px 600px at 80% 20%, rgba(255,59,59,.10), transparent 55%),
         url("hero.PNG") center / cover no-repeat;
       position:relative;
@@ -108,104 +107,151 @@
     }
     .hero:before{
       content:"";
-      position:absolute; inset:0;
-      background-image: radial-gradient(rgba(255,255,255,.035) 1px, transparent 1px);
-      background-size: 3px 3px;
+      position:absolute;inset:0;
+      background-image: radial-gradient(rgba(255,255,255,.032) 1px, transparent 1px);
+      background-size:3px 3px;
       opacity:.18;
-      pointer-events:none;
       mix-blend-mode: overlay;
+      pointer-events:none;
     }
+
     .heroGrid{
       position:relative;
       display:grid;
       grid-template-columns: 1.2fr .8fr;
-      gap:16px;
+      gap: 16px;
       align-items:end;
     }
-    @media (max-width: 900px){.heroGrid{grid-template-columns:1fr}}
+    @media (max-width: 900px){ .heroGrid{grid-template-columns:1fr} }
+
     .tag{
-      display:inline-flex;
-      gap:10px; align-items:center;
-      padding:10px 14px;
-      border-radius:999px;
+      display:inline-flex;gap:10px;align-items:center;
+      padding:10px 14px;border-radius:999px;
       border:1px solid rgba(255,255,255,.14);
       background: rgba(0,0,0,.22);
       backdrop-filter: blur(10px);
       color:rgba(255,255,255,.88);
-      font-weight:800;
-      font-size:13px;
+      font-weight:800;font-size:13px;
     }
     h1{
       margin:18px 0 14px;
-      font-size: clamp(44px, 6.2vw, 76px);
-      line-height: .95;
-      letter-spacing: -1.2px;
+      font-size: clamp(44px, 6.2vw, 78px);
+      line-height:.95;
+      letter-spacing:-1.2px;
     }
     .sub{
       margin:0;
       color:var(--muted);
-      font-size: 17px;
-      line-height: 1.7;
+      font-size:17px;
+      line-height:1.7;
       max-width: 56ch;
     }
     .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+
     .glass{
-      background: var(--card);
+      background: var(--panel);
       border:1px solid rgba(255,255,255,.10);
       border-radius: 22px;
       box-shadow: var(--shadow);
       backdrop-filter: blur(16px);
       padding: 18px;
     }
-    .facts{display:flex; gap:10px; flex-wrap:wrap}
+    .facts{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
     .fact{
-      padding:10px 12px;
-      border-radius:14px;
+      padding:10px 12px;border-radius:14px;
       border:1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.18);
-      font-weight:800;
-      font-size:13px;
-      color:rgba(255,255,255,.85);
+      background: rgba(0,0,0,.16);
+      font-weight:800;font-size:13px;color:rgba(255,255,255,.88);
     }
-
-    /* Sections */
-    section.bodysec{padding:56px 0}
-    h2{margin:0 0 12px;font-size:28px;letter-spacing:-.3px}
-    .lead{margin:0 0 18px;color:var(--muted);line-height:1.7;max-width:75ch}
-    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    @media (max-width:900px){.grid3{grid-template-columns:1fr}}
-    .card{
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
-      border-radius: 20px;
-      padding:16px;
-      box-shadow: 0 12px 40px rgba(0,0,0,.28);
-    }
-    .card h3{margin:0 0 8px}
-    .card p{margin:0;color:var(--muted);line-height:1.55}
     .price{
       margin-top:12px;
-      display:inline-flex;align-items:baseline;gap:8px;
-      padding:10px 12px;border-radius:16px;
+      display:flex;align-items:baseline;gap:8px;
+      padding:12px 12px;border-radius:16px;
       border:1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.18);
+      background: rgba(0,0,0,.16);
     }
     .price b{font-size:22px}
     .price span{color:var(--muted);font-size:13px}
 
-    /* Gallery */
+    /* SECTION BASE */
+    section.body{padding:62px 0}
+    h2{margin:0 0 12px;font-size:30px;letter-spacing:-.4px}
+    .lead{margin:0 0 20px;color:var(--muted);line-height:1.75;max-width:78ch}
+
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    @media (max-width: 900px){ .grid3{grid-template-columns:1fr} }
+
+    .card{
+      border:1px solid rgba(255,255,255,.10);
+      background: var(--panel2);
+      border-radius: 20px;
+      padding:16px;
+      box-shadow: 0 12px 40px rgba(0,0,0,.25);
+    }
+    .card h3{margin:0 0 8px}
+    .card p{margin:0;color:var(--muted);line-height:1.6}
+
+    /* LOGO BAR */
+    .logos{
+      display:flex;flex-wrap:wrap;gap:10px;
+      margin-top:14px;
+    }
+    .logoPill{
+      padding:10px 12px;border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.14);
+      font-weight:800;color:rgba(255,255,255,.82);
+      font-size:13px;
+    }
+
+    /* PACKAGES */
+    .pkg{
+      position:relative;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      border-radius: 22px;
+      padding:18px;
+    }
+    .badge{
+      position:absolute;top:14px;right:14px;
+      padding:8px 10px;border-radius:999px;
+      font-size:12px;font-weight:900;
+      background: rgba(255,59,59,.18);
+      border:1px solid rgba(255,59,59,.35);
+      color:#ffd0d0;
+    }
+    .pkg .priceRow{
+      margin-top:12px;
+      display:flex;align-items:baseline;gap:8px;
+      padding:10px 12px;border-radius:16px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.14);
+    }
+    .pkg .priceRow b{font-size:22px}
+    .pkg .priceRow span{color:var(--muted);font-size:13px}
+
+    /* GALLERY */
     .gallery{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
     @media (max-width:900px){.gallery{grid-template-columns:repeat(2,1fr)}}
     .g{border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.04);min-height:120px}
     .g img{width:100%;height:100%;object-fit:cover;display:block}
 
-    /* Reviews */
-    .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    @media (max-width:900px){.reviews{grid-template-columns:1fr}}
-    .quote{color:#f1f1ff;line-height:1.6}
-    .who{margin-top:10px;color:var(--muted);font-weight:900;font-size:13px}
+    /* FAQ */
+    details{
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      border-radius: 18px;
+      padding: 14px 14px;
+    }
+    summary{
+      cursor:pointer;
+      font-weight:900;
+      list-style:none;
+    }
+    summary::-webkit-details-marker{display:none}
+    details p{margin:10px 0 0;color:var(--muted);line-height:1.65}
 
-    /* Contact */
+    /* CONTACT */
     .contactGrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
     @media (max-width:900px){.contactGrid{grid-template-columns:1fr}}
     .field{
@@ -213,32 +259,38 @@
       padding:12px 12px;
       border-radius:14px;
       border:1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.20);
+      background: rgba(0,0,0,.18);
       color:#fff;
       outline:none;
     }
     textarea.field{min-height:120px;resize:vertical}
 
-    footer{border-top:1px solid rgba(255,255,255,.10);padding:26px 0 36px;color:var(--muted)}
-    .small{font-size:12px}
+    footer{
+      border-top:1px solid rgba(255,255,255,.08);
+      padding:26px 0 36px;
+      color:var(--muted);
+    }
+    .small{font-size:12px;color:var(--muted)}
+
+    /* Subtle “expensive” animation */
+    .reveal{opacity:0;transform:translateY(12px);transition: .7s ease}
+    .reveal.on{opacity:1;transform:none}
   </style>
 </head>
 
 <body>
 
-<!-- FIXED NAV -->
-<div class="topbar">
+<div class="navwrap">
   <div class="container">
     <div class="nav">
       <a class="brand" href="#top"><span class="mark"></span><span>DJ Lovett Entertainment</span></a>
-      <div class="menu">
+      <div class="links">
         <a href="#services">Services</a>
         <a href="#packages">Packages</a>
         <a href="#gallery">Gallery</a>
         <a href="#reviews">Reviews</a>
-        <a href="#contact">Booking</a>
-        <!-- OPTIONAL: separate pages later -->
-        <!-- <a href="services.html">Services Page</a> -->
+        <a href="#faq">FAQ</a>
+        <a href="#booking">Booking</a>
       </div>
       <a class="btn primary" href="tel:4044035484">Call Now</a>
     </div>
@@ -249,33 +301,39 @@
 <section class="hero" id="top">
   <div class="container">
     <div class="heroGrid">
-      <div>
-        <span class="tag">Available for bookings • Fast response</span>
-        <h1>Make your event<br>feel expensive.</h1>
+      <div class="reveal">
+        <span class="tag">Atlanta, GA • Weddings • Private • Corporate</span>
+        <h1>Make your event<br/>feel expensive.</h1>
         <p class="sub">
           Premium sound, clean setup, and the right music for your crowd.
-          Weddings, private parties, and corporate events across Atlanta.
+          Fast response — secure your date today.
         </p>
-
         <div class="actions">
           <a class="btn primary" href="tel:4044035484">Book by Phone</a>
           <a class="btn blue" href="sms:4044035484">Text to Book</a>
           <a class="btn" href="mailto:freddielovett36@gmail.com?subject=Booking%20Request%20-%20DJ%20Lovett%20Entertainment">Email</a>
         </div>
+        <div class="logos">
+          <div class="logoPill">Weddings</div>
+          <div class="logoPill">Private Events</div>
+          <div class="logoPill">Corporate</div>
+          <div class="logoPill">Atlanta & Surrounding</div>
+        </div>
       </div>
 
-      <div class="glass">
-        <div style="font-weight:900; font-size:14px;">Quick Quote</div>
-        <div style="margin-top:10px;color:var(--muted);line-height:1.6;font-size:13px;">
-          Starting at <b>$100/hr</b>. Tell me your date, venue, and hours.
-        </div>
-        <div style="margin-top:14px;" class="facts">
+      <div class="glass reveal">
+        <div style="font-weight:900;">Quick Quote</div>
+        <div class="price"><b>$100/hr</b><span>Packages available</span></div>
+        <div class="facts">
           <div class="fact">Pro Sound + Mic</div>
           <div class="fact">Lighting Options</div>
           <div class="fact">On-Time Setup</div>
         </div>
+        <div style="margin-top:12px;color:var(--muted);font-size:13px;line-height:1.6;">
+          Tell me your date, venue, and hours — I’ll respond fast.
+        </div>
         <div style="margin-top:14px;">
-          <a class="btn primary" href="#contact" style="width:100%;">Get a Quote</a>
+          <a class="btn primary" href="#booking" style="width:100%;">Get a Quote</a>
         </div>
       </div>
     </div>
@@ -283,59 +341,124 @@
 </section>
 
 <!-- SERVICES -->
-<section id="services" class="bodysec container anchor">
-  <h2>Services</h2>
-  <p class="lead">Pick your event type — I handle the music, announcements, and energy.</p>
+<section id="services" class="body container anchor">
+  <div class="reveal">
+    <h2>Services</h2>
+    <p class="lead">Every event gets a clean setup, a strong mix, and the right energy — no awkward moments, no dead dance floor.</p>
+  </div>
+
   <div class="grid3">
-    <div class="card"><h3>Weddings</h3><p>Ceremony + reception coverage, mic for speeches, clean transitions, packed dance floor.</p></div>
-    <div class="card"><h3>Private Parties</h3><p>Birthdays, graduations, reunions — requests welcome, crowd control included.</p></div>
-    <div class="card"><h3>Corporate Events</h3><p>Professional vibe, clean setup, volume control for mixers and celebrations.</p></div>
+    <div class="card reveal">
+      <h3>Weddings</h3>
+      <p>Ceremony + reception coverage. Mic for speeches. Smooth transitions. Crowd-reading that keeps the floor full.</p>
+    </div>
+    <div class="card reveal">
+      <h3>Private Parties</h3>
+      <p>Birthdays, graduations, anniversaries, reunions. Requests welcome. Professional vibe from start to finish.</p>
+    </div>
+    <div class="card reveal">
+      <h3>Corporate Events</h3>
+      <p>Professional sound, controlled volume, and a polished experience for mixers, launches, and celebrations.</p>
+    </div>
   </div>
 </section>
 
 <!-- PACKAGES -->
-<section id="packages" class="bodysec container anchor">
-  <h2>Packages</h2>
-  <p class="lead">Simple pricing. Ask about travel, extra lighting, and extended time.</p>
+<section id="packages" class="body container anchor">
+  <div class="reveal">
+    <h2>Packages</h2>
+    <p class="lead">Clear pricing with options. Ask about add-ons like uplighting, extra speakers, and extended time.</p>
+  </div>
+
   <div class="grid3">
-    <div class="card"><h3>Basic</h3><p>DJ + sound + mic. Great for smaller events.</p><div class="price"><b>$100/hr</b><span>2-hour minimum (edit)</span></div></div>
-    <div class="card"><h3>Standard</h3><p>DJ + sound + mic + party lighting.</p><div class="price"><b>$100/hr</b><span>Most popular</span></div></div>
-    <div class="card"><h3>Premium</h3><p>DJ + enhanced lighting + MC support + planning call.</p><div class="price"><b>$100/hr</b><span>Best for weddings</span></div></div>
+    <div class="pkg reveal">
+      <h3>Essential</h3>
+      <p class="lead" style="margin:0;color:var(--muted)">DJ + pro sound + mic. Perfect for smaller venues.</p>
+      <div class="priceRow"><b>$100/hr</b><span>2-hour minimum (edit)</span></div>
+    </div>
+
+    <div class="pkg reveal" style="border-color: rgba(255,59,59,.35);">
+      <div class="badge">Most Popular</div>
+      <h3>Signature</h3>
+      <p class="lead" style="margin:0;color:var(--muted)">DJ + sound + mic + party lighting. Best overall value.</p>
+      <div class="priceRow"><b>$100/hr</b><span>Great for parties</span></div>
+    </div>
+
+    <div class="pkg reveal">
+      <h3>Premium</h3>
+      <p class="lead" style="margin:0;color:var(--muted)">DJ + enhanced lighting + MC support + planning call.</p>
+      <div class="priceRow"><b>$100/hr</b><span>Ideal for weddings</span></div>
+    </div>
   </div>
 </section>
 
 <!-- GALLERY -->
-<section id="gallery" class="bodysec container anchor">
-  <h2>Gallery</h2>
-  <p class="lead">Upload more photos later (g1.jpg, g2.jpg…). For now these are placeholders.</p>
+<section id="gallery" class="body container anchor">
+  <div class="reveal">
+    <h2>Gallery</h2>
+    <p class="lead">Upload 6 real photos later and I’ll swap them in (g1.jpg, g2.jpg…). For now, placeholders use your hero image.</p>
+  </div>
+
   <div class="gallery">
-    <div class="g"><img src="hero.PNG" alt="DJ Lovett event" /></div>
-    <div class="g"><img src="hero.PNG" alt="DJ Lovett event" /></div>
-    <div class="g"><img src="hero.PNG" alt="DJ Lovett event" /></div>
-    <div class="g"><img src="hero.PNG" alt="DJ Lovett event" /></div>
-    <div class="g"><img src="hero.PNG" alt="DJ Lovett event" /></div>
-    <div class="g"><img src="hero.PNG" alt="DJ Lovett event" /></div>
+    <div class="g reveal"><img src="hero.PNG" alt="DJ Lovett" /></div>
+    <div class="g reveal"><img src="hero.PNG" alt="DJ Lovett" /></div>
+    <div class="g reveal"><img src="hero.PNG" alt="DJ Lovett" /></div>
+    <div class="g reveal"><img src="hero.PNG" alt="DJ Lovett" /></div>
+    <div class="g reveal"><img src="hero.PNG" alt="DJ Lovett" /></div>
+    <div class="g reveal"><img src="hero.PNG" alt="DJ Lovett" /></div>
   </div>
 </section>
 
 <!-- REVIEWS -->
-<section id="reviews" class="bodysec container anchor">
-  <h2>Reviews</h2>
-  <p class="lead">Swap these with real reviews once you have them.</p>
-  <div class="reviews">
-    <div class="card"><div class="quote">“DJ Lovett kept the party moving all night. Professional setup and perfect music.”</div><div class="who">— Wedding Client</div></div>
-    <div class="card"><div class="quote">“Showed up early, sounded amazing, and the crowd loved the mix. Highly recommended.”</div><div class="who">— Birthday Client</div></div>
-    <div class="card"><div class="quote">“Easy to work with and very responsive. Perfect vibe for our corporate event.”</div><div class="who">— Corporate Client</div></div>
+<section id="reviews" class="body container anchor">
+  <div class="reveal">
+    <h2>Reviews</h2>
+    <p class="lead">Replace these with real Google/Facebook reviews when you have them — this section is built to look premium.</p>
+  </div>
+
+  <div class="grid3">
+    <div class="card reveal"><div class="quote">“DJ Lovett kept the party moving all night. Clean setup and perfect music.”</div><div class="who">— Wedding Client</div></div>
+    <div class="card reveal"><div class="quote">“On time, great sound, and the crowd loved the mix. Highly recommend.”</div><div class="who">— Birthday Client</div></div>
+    <div class="card reveal"><div class="quote">“Easy to work with and very responsive. Perfect vibe for our corporate event.”</div><div class="who">— Corporate Client</div></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="body container anchor">
+  <div class="reveal">
+    <h2>FAQ</h2>
+    <p class="lead">This saves you time by answering the questions clients always ask.</p>
+  </div>
+
+  <div style="display:grid;gap:12px;">
+    <details class="reveal">
+      <summary>How far do you travel?</summary>
+      <p>Atlanta & surrounding areas. Travel fees can apply depending on distance.</p>
+    </details>
+    <details class="reveal">
+      <summary>Do you take song requests?</summary>
+      <p>Yes. I’ll blend requests with the right mix for the crowd and event type.</p>
+    </details>
+    <details class="reveal">
+      <summary>Do you provide a mic for speeches?</summary>
+      <p>Yes. Pro sound + mic is available for announcements, speeches, and MC support.</p>
+    </details>
+    <details class="reveal">
+      <summary>How do I book?</summary>
+      <p>Call or text 404-403-5484. Share your date, venue, hours, and vibe — I’ll respond fast.</p>
+    </details>
   </div>
 </section>
 
 <!-- BOOKING -->
-<section id="contact" class="bodysec container anchor">
-  <h2>Booking</h2>
-  <p class="lead">Fast response. Send your date, venue, and vibe.</p>
+<section id="booking" class="body container anchor">
+  <div class="reveal">
+    <h2>Booking</h2>
+    <p class="lead">Fast response. Send your date, venue, hours needed, and the vibe you want.</p>
+  </div>
 
   <div class="contactGrid">
-    <div class="card">
+    <div class="card reveal">
       <h3 style="margin-top:0;">Quick Contact</h3>
       <p class="lead" style="margin-bottom:14px;">
         📞 <a href="tel:4044035484"><b>404-403-5484</b></a><br/>
@@ -347,9 +470,12 @@
         <a class="btn blue" href="sms:4044035484">Text</a>
         <a class="btn" href="mailto:freddielovett36@gmail.com?subject=Booking%20Request%20-%20DJ%20Lovett%20Entertainment">Email</a>
       </div>
+      <div style="margin-top:12px;color:var(--muted);font-size:13px;line-height:1.6;">
+        Want a REAL form that saves leads automatically (without opening email)? Say “Formspree”.
+      </div>
     </div>
 
-    <div class="card">
+    <div class="card reveal">
       <h3 style="margin-top:0;">Send a Booking Request</h3>
       <form action="mailto:freddielovett36@gmail.com" method="post" enctype="text/plain">
         <input class="field" name="Name" placeholder="Your name" required />
@@ -366,9 +492,6 @@
         <div style="height:12px"></div>
         <button class="btn primary" type="submit" style="width:100%;">Send Request</button>
       </form>
-      <p class="small" style="margin-top:10px;color:var(--muted);">
-        Want a real form that saves leads automatically? Say “Formspree” and I’ll connect it.
-      </p>
     </div>
   </div>
 </section>
@@ -381,6 +504,15 @@
 
 <script>
   document.getElementById("y").textContent = new Date().getFullYear();
+
+  // premium reveal animations
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting) e.target.classList.add('on');
+    });
+  }, {threshold: 0.12});
+  els.forEach(el=>io.observe(el));
 </script>
 
 </body>
