@@ -340,26 +340,61 @@
   </div>
 </section>
 
-<!-- SERVICES -->
-<section id="services" class="body container anchor">
-  <div class="reveal">
-    <h2>Services</h2>
-    <p class="lead">Every event gets a clean setup, a strong mix, and the right energy — no awkward moments, no dead dance floor.</p>
-  </div>
+<section class="services" id="services">
+  <div class="services__inner">
+    <h2 class="services__title">Services &amp; Packages</h2>
+    <p class="services__subtitle">
+      Base rate is <strong>$100 per hour</strong>. Everything else can be discussed
+      based on your event, setup, and location.
+    </p>
 
-  <div class="grid3">
-    <div class="card reveal">
-      <h3>Weddings</h3>
-      <p>Ceremony + reception coverage. Mic for speeches. Smooth transitions. Crowd-reading that keeps the floor full.</p>
+    <div class="services__grid">
+
+      <article class="service-card" style="--bg:url('club-lounge.PNG')">
+        <h3>Club &amp; Lounge Nights</h3>
+        <p>High-energy sets for clubs, bars, and lounges.</p>
+        <ul>
+          <li>Base: $100/hour</li>
+          <li>House system or own decks</li>
+          <li>Hip-hop, R&amp;B, trap &amp; more</li>
+        </ul>
+      </article>
+
+      <article class="service-card" style="--bg:url('weddings.PNG')">
+        <h3>Weddings &amp; Receptions</h3>
+        <p>Ceremony to last dance — smooth and organized.</p>
+        <ul>
+          <li>Base: $100/hour</li>
+          <li>MC &amp; announcements optional</li>
+          <li>Custom song selections</li>
+        </ul>
+      </article>
+
+      <article class="service-card" style="--bg:url('private-parties.PNG')">
+        <h3>Private Parties &amp; Events</h3>
+        <p>Birthdays, graduations, and celebrations.</p>
+        <ul>
+          <li>Base: $100/hour</li>
+          <li>Flexible playlist style</li>
+          <li>Indoor/outdoor setup</li>
+        </ul>
+      </article>
+
+      <article class="service-card" style="--bg:url('corporate-events.PNG')">
+        <h3>Corporate &amp; School Events</h3>
+        <p>Professional and family-friendly events.</p>
+        <ul>
+          <li>Base: $100/hour</li>
+          <li>Clean radio edits</li>
+          <li>Hosting available</li>
+        </ul>
+      </article>
+
     </div>
-    <div class="card reveal">
-      <h3>Private Parties</h3>
-      <p>Birthdays, graduations, anniversaries, reunions. Requests welcome. Professional vibe from start to finish.</p>
-    </div>
-    <div class="card reveal">
-      <h3>Corporate Events</h3>
-      <p>Professional sound, controlled volume, and a polished experience for mixers, launches, and celebrations.</p>
-    </div>
+
+    <p class="services__note">
+      Note: Final price depends on hours, travel, equipment needs, and special requests.
+    </p>
   </div>
 </section>
 
@@ -517,3 +552,84 @@
 
 </body>
 </html>
+
+<style>
+.services{
+  padding: 72px 18px;
+}
+
+.services__inner{
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.services__title{
+  margin: 0 0 10px;
+  font-size: 32px;
+}
+
+.services__subtitle{
+  margin: 0 0 26px;
+  line-height: 1.6;
+  opacity: 0.92;
+}
+
+.services__grid{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.service-card{
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  padding: 18px 16px;
+  background-image: var(--bg);
+  background-size: cover;
+  background-position: center;
+  border: 1px solid rgba(255,255,255,0.16);
+  box-shadow: 0 14px 35px rgba(0,0,0,0.35);
+}
+
+.service-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.55) 0%,
+    rgba(0,0,0,0.72) 55%,
+    rgba(0,0,0,0.82) 100%
+  );
+}
+
+.service-card > *{
+  position: relative;
+  z-index: 1;
+}
+
+.service-card h3{
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.service-card p,
+.service-card ul{
+  line-height: 1.55;
+  opacity: 0.95;
+}
+
+.services__note{
+  margin-top: 18px;
+  opacity: 0.85;
+}
+
+@media (max-width: 1050px){
+  .services__grid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px){
+  .services__grid{ grid-template-columns: 1fr; }
+}
+</style>
+</head>
