@@ -451,13 +451,6 @@
     <p class="lead">Replace these with real Google/Facebook reviews when you have them — this section is built to look premium.</p>
   </div>
 
-  <div class="grid3">
-    <div class="card reveal"><div class="quote">“DJ Lovett kept the party moving all night. Clean setup and perfect music.”</div><div class="who">— Wedding Client</div></div>
-    <div class="card reveal"><div class="quote">“On time, great sound, and the crowd loved the mix. Highly recommend.”</div><div class="who">— Birthday Client</div></div>
-    <div class="card reveal"><div class="quote">“Easy to work with and very responsive. Perfect vibe for our corporate event.”</div><div class="who">— Corporate Client</div></div>
-  </div>
-</section>
-
 <!-- FAQ -->
 <section id="faq" class="body container anchor">
   <div class="reveal">
@@ -580,56 +573,59 @@
   gap: 18px;
 }
 
+<style>
+/* ...keep your other CSS... */
+
 .service-card{
   position: relative;
   overflow: hidden;
   border-radius: 16px;
   padding: 18px 16px;
+
+  /* NEW: taller cards so you can see the person */
+  min-height: 360px;
+
+  /* NEW: show full image instead of cropping */
   background-image: var(--bg);
-  background-size: cover;
-  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;   /* ✅ no cropping */
+  background-position: center bottom; /* ✅ keeps faces higher, body shows */
+
   border: 1px solid rgba(255,255,255,0.16);
   box-shadow: 0 14px 35px rgba(0,0,0,0.35);
 }
 
+/* NEW: gives a clean background behind “contain” */
+.service-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,0.25);
+  z-index: 0;
+}
+
+/* Dark overlay to keep text readable (still works) */
 .service-card::before{
   content:"";
   position:absolute;
   inset:0;
   background: linear-gradient(
     180deg,
-    rgba(0,0,0,0.55) 0%,
-    rgba(0,0,0,0.72) 55%,
-    rgba(0,0,0,0.82) 100%
+    rgba(0,0,0,0.40) 0%,
+    rgba(0,0,0,0.65) 55%,
+    rgba(0,0,0,0.78) 100%
   );
+  z-index: 0;
 }
 
+/* Keep text on top */
 .service-card > *{
   position: relative;
   z-index: 1;
 }
 
-.service-card h3{
-  margin: 0 0 10px;
-  font-size: 18px;
-}
-
-.service-card p,
-.service-card ul{
-  line-height: 1.55;
-  opacity: 0.95;
-}
-
-.services__note{
-  margin-top: 18px;
-  opacity: 0.85;
-}
-
-@media (max-width: 1050px){
-  .services__grid{ grid-template-columns: repeat(2, 1fr); }
-}
+/* Mobile: make cards a bit taller */
 @media (max-width: 560px){
-  .services__grid{ grid-template-columns: 1fr; }
+  .service-card{ min-height: 420px; }
 }
 </style>
-</head>
