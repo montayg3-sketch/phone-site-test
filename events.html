@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Events | Lovett Entertainment</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="logo">Lovett <span>Entertainment</span></a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="mixes.html">Mixes</a></li>
+          <li><a href="events.html" class="active">Events</a></li>
+          <li><a href="booking.html">Booking</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="page-hero-inner">
+        <h1>Upcoming Events</h1>
+        <p class="lead">Public appearances, club nights, and other events where people can catch Lovett Entertainment live.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <div class="item-row">
+          <div class="item-main">
+            <strong>Club Eclipse — Main Room</strong>
+            <div>High-energy club set with hip-hop, trap, and Atlanta favorites.</div>
+          </div>
+          <div class="item-meta">
+            <div>Feb 10 · 10:00 PM</div>
+            <div>Atlanta, GA</div>
+          </div>
+        </div>
+
+        <div class="item-row">
+          <div class="item-main">
+            <strong>Lounge 404 — Guest DJ Set</strong>
+            <div>Blended R&B and party vibes to keep the floor moving.</div>
+          </div>
+          <div class="item-meta">
+            <div>Feb 17 · 9:30 PM</div>
+            <div>Decatur, GA</div>
+          </div>
+        </div>
+
+        <div class="item-row">
+          <div class="item-main">
+            <strong>Private Event (Booked)</strong>
+            <div>Private celebration · details on invite only.</div>
+          </div>
+          <div class="item-meta">
+            <div>Mar 2 · 7:00 PM</div>
+            <div>College Park, GA</div>
+          </div>
+        </div>
+
+        <p style="margin-top:1.5rem;opacity:0.9;">
+          Want Lovett Entertainment at your next event?
+          <a href="booking.html" style="text-decoration:underline;">Check availability and book here.</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Lovett Entertainment · Atlanta, GA</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
