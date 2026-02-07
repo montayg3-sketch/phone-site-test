@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Booking | Lovett Entertainment</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="logo">Lovett <span>Entertainment</span></a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="mixes.html">Mixes</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="booking.html" class="active">Booking</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="page-hero-inner">
+        <h1>Booking & Contact</h1>
+        <p class="lead">
+          Share your date, event type, and location, and we’ll follow up to confirm availability and details.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="section-inner contact-grid">
+        <div class="contact-box">
+          <p><span class="label">Business</span>Lovett Entertainment</p>
+          <p><span class="label">Phone / Text</span>404-403-5484</p>
+          <p><span class="label">Email</span>freddielovett36@gmail.com</p>
+          <p><span class="label">Base Rate</span>$100 per hour (we can discuss everything in more detail)</p>
+          <p><span class="label">Location</span>Atlanta, GA · available to travel</p>
+        </div>
+
+        <div class="contact-box">
+          <!-- Front-end only – to really send this, hook it up to a form service later -->
+          <form>
+            <label class="label" for="name">Your Name</label>
+            <input type="text" id="name" placeholder="Full name" />
+
+            <label class="label" for="email">Your Email</label>
+            <input type="email" id="email" placeholder="you@example.com" />
+
+            <label class="label" for="phone">Your Phone</label>
+            <input type="text" id="phone" placeholder="Optional phone number" />
+
+            <label class="label" for="eventType">Event Type</label>
+            <input type="text" id="eventType" placeholder="Wedding, club night, birthday, etc." />
+
+            <label class="label" for="date">Event Date</label>
+            <input type="text" id="date" placeholder="MM/DD/YYYY" />
+
+            <label class="label" for="details">Event Details</label>
+            <textarea id="details" placeholder="Hours needed, location, number of guests, special songs, etc."></textarea>
+
+            <button type="submit" class="btn btn-primary">Send Booking Request</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Lovett Entertainment · Atlanta, GA</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
