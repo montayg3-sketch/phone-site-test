@@ -1,386 +1,362 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lovett Entertainment | Atlanta DJ</title>
-  <meta name="description" content="Lovett Entertainment - Atlanta DJ for clubs, weddings, private events. $100/hour. Call/Text 404-403-5484." />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <!-- NAV -->
-  <header class="site-header">
-    <div class="nav-container">
-      <a class="brand" href="#home">
-        <span class="brand-word">Lovett</span>
-        <span class="brand-accent">Entertainment</span>
-      </a>
+html, body {
+  height: 100%;
+}
 
-      <nav class="main-nav" aria-label="Primary">
-        <a href="#home" class="nav-link">Home</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#services" class="nav-link">Services</a>
-        <a href="#mixes" class="nav-link">Mixes</a>
-        <a href="#events" class="nav-link">Events</a>
-        <a href="#booking" class="nav-link nav-cta">Booking</a>
-      </nav>
-    </div>
-  </header>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #070815;
+  color: #ffffff;
+  line-height: 1.6;
+}
 
-  <main>
+/* LINKS */
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-    <!-- HERO -->
-    <section id="home" class="hero hero-bg">
-      <div class="hero-overlay"></div>
+/* HEADER / NAVBAR */
 
-      <div class="wrap hero-wrap">
-        <!-- LEFT HERO TEXT -->
-        <div class="hero-left">
-          <div class="hero-kicker">ATLANTA · DJ & EVENT EXPERIENCE</div>
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(7, 8, 21, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  z-index: 1000;
+}
 
-          <h1 class="hero-title">Lovett Entertainment</h1>
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.9rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-          <p class="hero-subtitle">
-            Turning every night into a movie. Lovett Entertainment brings high-energy DJ sets,
-            smooth transitions, and crowd-control that keeps your party jumping all night long.
-          </p>
+.logo {
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: 0.16rem;
+  text-transform: uppercase;
+}
 
-          <div class="hero-pills">
-            <span class="pill">📍 Atlanta, GA</span>
-            <span class="pill">🎧 Clubs · Weddings · Private Events</span>
-            <span class="pill">💵 $100/hour · Details discussed in person</span>
-          </div>
+.logo span {
+  color: #ff2b6b;
+}
 
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#booking">Book Now · 404-403-5484</a>
-            <a class="btn btn-ghost" href="#mixes">Listen to Sample Mixes</a>
-          </div>
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.1rem;
+  font-size: 0.92rem;
+}
 
-          <div class="hero-stats">
-            <div class="stat">
-              <div class="stat-label">BASE PRICE</div>
-              <div class="stat-value">$100 / hour</div>
-            </div>
-            <div class="stat">
-              <div class="stat-label">RESPONSE TIME</div>
-              <div class="stat-value">Usually within 24 hours</div>
-            </div>
-            <div class="stat">
-              <div class="stat-label">MAIN AREA</div>
-              <div class="stat-value">Metro Atlanta (will travel)</div>
-            </div>
-          </div>
-        </div>
+.main-nav a {
+  opacity: 0.85;
+  position: relative;
+  padding-bottom: 0.1rem;
+}
 
-        <!-- RIGHT FEATURE CARD -->
-        <aside class="hero-right">
-          <div class="feature-card">
-            <div class="feature-top">
-              <span class="tag">FEATURED DJ</span>
-              <h2>Your Event, Your Sound</h2>
-              <p>
-                Whether it’s a wedding, club night, birthday, or corporate event,
-                Lovett Entertainment reads the room, blends the right tracks, and keeps the vibe
-                exactly where you want it.
-              </p>
-            </div>
+.main-nav a:hover {
+  opacity: 1;
+}
 
-            <div class="feature-grid">
-              <div class="feature-block">
-                <div class="feature-label">MAIN STYLES</div>
-                <div class="feature-text">Hip-Hop · R&B · Old School · Party Anthems</div>
-              </div>
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(135deg, #ff2b6b, #ff9f3c);
+  transition: width 0.2s ease;
+}
 
-              <div class="feature-block">
-                <div class="feature-label">CONTACT</div>
-                <div class="feature-text">404-403-5484<br>freddielovett36@gmail.com</div>
-              </div>
+.main-nav a:hover::after,
+.main-nav a.active::after {
+  width: 100%;
+}
 
-              <div class="feature-block">
-                <div class="feature-label">BASE RATE</div>
-                <div class="feature-text">$100 / hour</div>
-              </div>
+/* GENERAL LAYOUT */
 
-              <div class="feature-block">
-                <div class="feature-label">NOTE</div>
-                <div class="feature-text">We can discuss everything in more detail — event type, time, setup, and special requests.</div>
-              </div>
-            </div>
+main {
+  padding-top: 72px; /* room for fixed header */
+}
 
-            <a class="btn btn-wide" href="#booking">Lock in your date</a>
-          </div>
-        </aside>
-      </div>
-    </section>
+.section {
+  padding: 3.5rem 1rem;
+}
 
-    <!-- ABOUT -->
-    <section id="about" class="section">
-      <div class="wrap">
-        <h2 class="section-title">About Lovett Entertainment</h2>
-        <p class="section-subtitle">
-          Lovett Entertainment is all about moments — the first dance, the packed dance floor, the sing-along you’ll
-          talk about for years. Based in Atlanta, GA, we bring professional sound, a clean setup, and a DJ who knows
-          how to move every type of crowd.
-        </p>
+.section-alt {
+  background: #0d0e20;
+}
 
-        <div class="cards-4">
-          <div class="card">
-            <h3>Crowd Control</h3>
-            <p>Reading the room is everything. From warm-up tracks to peak-hour anthems, the energy is guided so your event never feels flat.</p>
-          </div>
+.section-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
 
-          <div class="card">
-            <h3>Clean & Professional</h3>
-            <p>On-time arrival, clean setup, and clear communication before, during, and after the event. You focus on the moment; we handle the music.</p>
-          </div>
+.section-inner h1,
+.section-inner h2 {
+  margin-bottom: 0.8rem;
+}
 
-          <div class="card">
-            <h3>Custom Playlists</h3>
-            <p>Every event is different. We work with your must-play songs, do-not-play list, and the exact feeling you want from start to finish.</p>
-          </div>
+.lead {
+  font-size: 1rem;
+  opacity: 0.92;
+  margin-bottom: 1rem;
+}
 
-          <div class="card">
-            <h3>Atlanta Roots</h3>
-            <p>Born in the Atlanta sound — trap, R&B, old school, and more. If you want that real ATL flavor at your event, you’re in the right place.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+/* HERO ON HOME PAGE */
 
-    <!-- SERVICES -->
-    <section id="services" class="section section-alt">
-      <div class="wrap">
-        <h2 class="section-title">Services & Packages</h2>
-        <p class="section-subtitle">
-          Base rate is <strong>$100 per hour</strong>. Everything else can be discussed in more detail based on your event, setup, and location.
-        </p>
+.hero {
+  min-height: calc(100vh - 72px);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  padding: 2.5rem 1rem;
+}
 
-        <div class="service-cols">
-          <div class="service-col">
-            <h3>Club & Lounge Nights</h3>
-            <p>High-energy sets for clubs, bars, and lounges. Smooth transitions, crowd reading, and a soundtrack that keeps people at the bar and on the floor.</p>
-            <ul>
-              <li>Base: $100/hour</li>
-              <li>Custom playlists</li>
-              <li>Can bring own deck or use house setup</li>
-            </ul>
-          </div>
+.hero-with-bg {
+  background-image: url('hero.png'); /* change to images/hero.png if in images folder */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center 10%; /* move image up to show face */
+}
 
-          <div class="service-col">
-            <h3>Weddings & Receptions</h3>
-            <p>Ceremony, cocktail hour, reception, and late-night turn up. From the first dance to the last song, we keep it smooth and memorable.</p>
-            <ul>
-              <li>Base: $100/hour</li>
-              <li>MC & announcements optional</li>
-              <li>Custom song selections (first dance, etc.)</li>
-            </ul>
-          </div>
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.75) 0%,
+    rgba(0,0,0,0.45) 40%,
+    rgba(0,0,0,0.45) 70%,
+    rgba(0,0,0,0.9) 100%
+  );
+}
 
-          <div class="service-col">
-            <h3>Private Parties & Events</h3>
-            <p>Birthdays, graduations, block parties, family reunions, and more. You bring the people, we’ll bring the sound.</p>
-            <ul>
-              <li>Base: $100/hour</li>
-              <li>Flexible playlist style</li>
-              <li>Indoor or outdoor-compatible setup</li>
-            </ul>
-          </div>
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 580px;
+}
 
-          <div class="service-col">
-            <h3>Corporate & School Events</h3>
-            <p>Clean edits, professional presence, and family-friendly sets for school dances, corporate events, and community functions.</p>
-            <ul>
-              <li>Base: $100/hour</li>
-              <li>Clean / radio edits</li>
-              <li>Announcements & hosting available</li>
-            </ul>
-          </div>
-        </div>
+.hero-tagline {
+  font-size: 0.7rem;
+  letter-spacing: 0.22rem;
+  text-transform: uppercase;
+  color: #ff7bb5;
+  margin-bottom: 0.6rem;
+}
 
-        <p class="tiny-note">
-          Note: Final price depends on hours, travel, equipment needs, and any special requests.
-          We can discuss everything in more detail when you reach out.
-        </p>
-      </div>
-    </section>
+.hero-title {
+  font-size: 2.7rem;
+  margin-bottom: 0.7rem;
+}
 
-    <!-- MIXES -->
-    <section id="mixes" class="section">
-      <div class="wrap">
-        <h2 class="section-title">Sample Mixes</h2>
-        <p class="section-subtitle">
-          Add your real mix links here (SoundCloud, Mixcloud, YouTube, etc.) so people can hear your energy before they even book.
-        </p>
+.hero-subtitle {
+  font-size: 1rem;
+  opacity: 0.95;
+  margin-bottom: 1.3rem;
+}
 
-        <div class="mix-grid">
-          <div class="mix-card">
-            <div class="mix-cover cover-1"></div>
-            <div class="mix-body">
-              <h3>Atlanta Nights Vol. 1</h3>
-              <div class="mix-meta">Hip-Hop · Trap · Club Bangers · 45 min</div>
-              <p>A high-energy Atlanta-style set designed to keep the dance floor packed from the first drop.</p>
-              <a class="btn btn-small" href="#" target="_blank" rel="noopener">Play Mix</a>
-            </div>
-          </div>
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.4rem;
+}
 
-          <div class="mix-card">
-            <div class="mix-cover cover-2"></div>
-            <div class="mix-body">
-              <h3>R&B After Dark</h3>
-              <div class="mix-meta">R&B · Slow Jams · Vibes · 60 min</div>
-              <p>Smooth late-night vibes, sing-along hooks, and feel-good tracks for grown & sexy nights.</p>
-              <a class="btn btn-small" href="#" target="_blank" rel="noopener">Play Mix</a>
-            </div>
-          </div>
+.hero-badges span {
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(8,8,18,0.9);
+  font-size: 0.78rem;
+}
 
-          <div class="mix-card">
-            <div class="mix-cover cover-3"></div>
-            <div class="mix-body">
-              <h3>Throwback Cookout Set</h3>
-              <div class="mix-meta">Old School · 90s · 2000s · 50 min</div>
-              <p>Family-friendly bangers for reunions, cookouts, and daytime parties that everyone enjoys.</p>
-              <a class="btn btn-small" href="#" target="_blank" rel="noopener">Play Mix</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+/* BUTTONS */
 
-    <!-- EVENTS -->
-    <section id="events" class="section section-alt">
-      <div class="wrap">
-        <h2 class="section-title">Upcoming Events</h2>
-        <p class="section-subtitle">
-          Keep this section updated so people can pull up, show love, and see you live.
-        </p>
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.4rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
 
-        <div class="event-list">
-          <div class="event-row">
-            <div class="event-time">Feb 10 · 10:00 PM</div>
-            <div class="event-city">Atlanta, GA</div>
-            <div class="event-venue">Club Eclipse — Main Room</div>
-          </div>
+.btn-primary {
+  background: linear-gradient(135deg, #ff2b6b, #ff9f3c);
+  color: #ffffff;
+  margin-right: 0.6rem;
+}
 
-          <div class="event-row">
-            <div class="event-time">Feb 17 · 9:30 PM</div>
-            <div class="event-city">Decatur, GA</div>
-            <div class="event-venue">Lounge 404 — Guest DJ Set</div>
-          </div>
+.btn-outline {
+  border: 1px solid rgba(255,255,255,0.5);
+  color: #ffffff;
+  background: transparent;
+}
 
-          <div class="event-row">
-            <div class="event-time">Mar 2 · 7:00 PM</div>
-            <div class="event-city">College Park, GA</div>
-            <div class="event-venue">Private Event (Booked)</div>
-          </div>
-        </div>
-      </div>
-    </section>
+.btn-primary:hover {
+  opacity: 0.9;
+}
 
-    <!-- BOOKING -->
-    <section id="booking" class="section">
-      <div class="wrap">
-        <div class="booking-hero">
-          <h2 class="section-title">Booking & Contact</h2>
-          <p class="section-subtitle">
-            Serious about bringing real energy to your event? Reach out with your date, location, hours needed,
-            and what kind of vibe you want. We’ll handle the sound.
-          </p>
-        </div>
+.btn-outline:hover {
+  border-color: #ff2b6b;
+  color: #ff2b6b;
+}
 
-        <div class="booking-grid">
-          <div class="panel">
-            <div class="panel-label">BUSINESS NAME</div>
-            <div class="panel-text">Lovett Entertainment</div>
+/* SIMPLE GRID / LIST HELPERS */
 
-            <div class="panel-label">BOOKING EMAIL</div>
-            <div class="panel-text">freddielovett36@gmail.com</div>
+.two-col {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
 
-            <div class="panel-label">PHONE / TEXT</div>
-            <div class="panel-text">404-403-5484</div>
+.card {
+  background: #121327;
+  border-radius: 0.8rem;
+  padding: 1.2rem 1.1rem;
+  border: 1px solid rgba(255,255,255,0.08);
+}
 
-            <div class="panel-label">BASE RATE</div>
-            <div class="panel-text">$100 per hour</div>
+.card h3 {
+  margin-bottom: 0.45rem;
+  color: #ffbfd5;
+}
 
-            <div class="panel-label">CITY</div>
-            <div class="panel-text">Atlanta, GA (will travel)</div>
+.simple-list {
+  list-style: disc;
+  margin-left: 1.2rem;
+  margin-top: 0.5rem;
+}
 
-            <div class="panel-label">BOOKING NOTE</div>
-            <div class="panel-text">
-              We can discuss everything in more detail — hours, equipment, travel, and special requests.
-            </div>
-          </div>
+/* PAGE HERO FOR INNER PAGES */
 
-          <div class="panel">
-            <form>
-              <label class="field">
-                <span>Your Name</span>
-                <input type="text" placeholder="Full Name" />
-              </label>
+.page-hero {
+  padding: 3.2rem 1rem 2rem;
+  background: radial-gradient(circle at top, #2b2252 0%, #070815 55%);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
 
-              <label class="field">
-                <span>Your Email</span>
-                <input type="email" placeholder="you@example.com" />
-              </label>
+.page-hero-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
 
-              <label class="field">
-                <span>Your Phone</span>
-                <input type="text" placeholder="Optional phone number" />
-              </label>
+.page-hero h1 {
+  font-size: 2rem;
+  margin-bottom: 0.4rem;
+}
 
-              <label class="field">
-                <span>Event Type</span>
-                <input type="text" placeholder="Wedding, club night, birthday, etc." />
-              </label>
+/* TABLE-LIKE LIST (Events, etc.) */
 
-              <label class="field">
-                <span>Event Date</span>
-                <input type="text" placeholder="MM/DD/YYYY" />
-              </label>
+.item-row {
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
 
-              <label class="field">
-                <span>Event Details</span>
-                <textarea placeholder="Hours needed, location, vibe, special songs, etc."></textarea>
-              </label>
+.item-main {
+  flex: 2;
+}
 
-              <button class="btn btn-primary btn-full" type="submit">Send Booking Request</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
+.item-meta {
+  flex: 1;
+  opacity: 0.9;
+}
 
-  </main>
+/* CONTACT / FORM */
 
-  <footer class="site-footer">
-    <div class="wrap footer-wrap">
-      <div>© <span id="year"></span> Lovett Entertainment · Atlanta, GA</div>
-      <div class="footer-links">
-        <a href="#">Instagram</a>
-        <a href="#">TikTok</a>
-        <a href="#">YouTube</a>
-        <a href="#">SoundCloud</a>
-      </div>
-    </div>
-  </footer>
+.contact-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+}
 
-  <script>
-    // footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
+.contact-box {
+  background: #121327;
+  border-radius: 0.8rem;
+  padding: 1.3rem 1.2rem;
+  border: 1px solid rgba(255,255,255,0.08);
+}
 
-    // smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', (e) => {
-        const id = a.getAttribute('href');
-        if (!id || id === "#") return;
-        const el = document.querySelector(id);
-        if (!el) return;
-        e.preventDefault();
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
-    });
-  </script>
+.contact-box p {
+  margin-bottom: 0.6rem;
+}
 
-</body>
-</html>
+.label {
+  display: block;
+  font-size: 0.78rem;
+  letter-spacing: 0.18rem;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 0.1rem;
+}
 
+.contact-box input,
+.contact-box textarea {
+  width: 100%;
+  padding: 0.65rem 0.7rem;
+  margin-bottom: 0.85rem;
+  border-radius: 0.6rem;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: #070815;
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+.contact-box textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+/* FOOTER */
+
+.site-footer {
+  padding: 1.5rem 1rem 2rem;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  text-align: center;
+  font-size: 0.85rem;
+  background: #070815;
+  opacity: 0.9;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 750px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .main-nav ul {
+    flex-wrap: wrap;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
