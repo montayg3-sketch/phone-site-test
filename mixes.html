@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mixes | Lovett Entertainment</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="logo">Lovett <span>Entertainment</span></a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="mixes.html" class="active">Mixes</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="booking.html">Booking</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="page-hero-inner">
+        <h1>Sample Mixes</h1>
+        <p class="lead">
+          Add your SoundCloud, Mixcloud, or YouTube links here so people can hear your style before they book.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="section-inner two-col">
+        <div class="card">
+          <h3>Atlanta Nights · Club Sample</h3>
+          <p>Hip-Hop · Trap · Club bangers · 30–40 minutes.</p>
+          <p><a href="#" class="btn btn-outline">Add Link</a></p>
+        </div>
+
+        <div class="card">
+          <h3>R&B & Vibes</h3>
+          <p>Smooth R&B and slow jams for receptions and grown & classy events.</p>
+          <p><a href="#" class="btn btn-outline">Add Link</a></p>
+        </div>
+
+        <div class="card">
+          <h3>Family & Cookout Mix</h3>
+          <p>Old school, 90s, 2000s, and clean edits for family events.</p>
+          <p><a href="#" class="btn btn-outline">Add Link</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Lovett Entertainment · Atlanta, GA</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
