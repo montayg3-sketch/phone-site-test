@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Services | Lovett Entertainment</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="logo">Lovett <span>Entertainment</span></a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html" class="active">Services</a></li>
+          <li><a href="mixes.html">Mixes</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="booking.html">Booking</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="page-hero-inner">
+        <h1>DJ Services</h1>
+        <p class="lead">
+          Flexible DJ services for clubs, weddings, private parties, and corporate events.
+          Base rate: <strong>$100 per hour</strong> — details can be discussed.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner two-col">
+        <div class="card">
+          <h3>Clubs & Lounges</h3>
+          <p>
+            High-energy sets with smooth transitions that keep the floor moving and the room engaged.
+          </p>
+          <ul class="simple-list">
+            <li>Hip-Hop · R&B · Trap · Old School</li>
+            <li>Base: $100 / hour</li>
+            <li>Can work with house system or bring controller</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Weddings & Receptions</h3>
+          <p>
+            Music for ceremony, cocktail hour, and reception. From entrance songs to last dance.
+          </p>
+          <ul class="simple-list">
+            <li>Timeline planning and announcements</li>
+            <li>Special songs and edits available</li>
+            <li>Base: $100 / hour (package discussed)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Private Parties</h3>
+          <p>
+            Birthdays, graduations, family reunions and more — fun, clean energy for all ages.
+          </p>
+          <ul class="simple-list">
+            <li>Must-play and do-not-play lists</li>
+            <li>Indoor or outdoor events</li>
+            <li>Base: $100 / hour</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Corporate & School Events</h3>
+          <p>
+            Professional presence, clean versions, and the right balance between music and announcements.
+          </p>
+          <ul class="simple-list">
+            <li>Company parties and celebrations</li>
+            <li>School dances and events</li>
+            <li>Base: $100 / hour</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Lovett Entertainment · Atlanta, GA</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
