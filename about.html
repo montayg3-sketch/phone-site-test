@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>About | Lovett Entertainment</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="logo">Lovett <span>Entertainment</span></a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="mixes.html">Mixes</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="booking.html">Booking</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="page-hero-inner">
+        <h1>About Lovett Entertainment</h1>
+        <p class="lead">
+          Atlanta-based DJ focused on making every event feel organized, smooth, and unforgettable —
+          whether it’s a nightclub, a wedding reception, or a family celebration.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner two-col">
+        <div>
+          <h2>Professional from start to finish</h2>
+          <p>
+            Showing up early, communicating clearly, and being prepared are non-negotiable. Lovett Entertainment
+            is built on professionalism — so you don’t have to worry about the DJ, you can focus on your guests.
+          </p>
+          <p>
+            We take time to understand the type of event you’re planning, who’s in the room, and what kind of
+            energy you want throughout the night.
+          </p>
+        </div>
+        <div>
+          <h2>Reading the room</h2>
+          <p>
+            Every crowd is different. The playlist isn’t just a list of songs — it’s a live experience.
+            We watch the room and adjust in real time to keep people engaged and on the dance floor.
+          </p>
+          <p>
+            From old school to new hits, clean versions to club vibes, Lovett Entertainment keeps the music
+            moving in a way that fits your crowd.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Lovett Entertainment · Atlanta, GA</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
